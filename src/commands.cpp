@@ -2864,4 +2864,25 @@ void CommandSubmitPurchaseReceipt::procresult()
     }
 }
 
+// Credit Card Store
+CommandCreditCardStore::CommandCreditCardStore(MegaClient* client, char *cc, char *last4, char *expm, char *expy, char *hash)
+{
+    this->client = client;
+
+    cmd("css");
+
+    arg("cc", cc);
+    arg("last4", last4);
+    arg("expm", expm);
+    arg("expy", expy);
+    arg("hash", hash);
+
+    tag = client->reqtag;
+}
+
+void CommandCreditCardStore::procresult()
+{
+
+}
+
 } // namespace
